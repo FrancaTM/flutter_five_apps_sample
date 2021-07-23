@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() {
   runApp(MyApp());
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Center(
               child: Text(
-                'You are operating on ${Platform.operatingSystem}',
+                'You are operating on ${kIsWeb ? "the web" : Platform.operatingSystem}',
                 style: const TextStyle(
                   fontSize: 20,
                   color: Colors.white,
